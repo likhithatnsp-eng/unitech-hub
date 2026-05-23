@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>UniTech Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f7fa;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            background:#6c63ff;
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            color:white;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00c9a7;
+        }
+
+        .login-btn{
+            background:white;
+            color:#6c63ff;
+            padding:10px 20px;
+            border-radius:30px;
+        }
+
+        /* HERO SECTION */
+
+        .hero{
+            min-height:90vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:20px;
+            background:linear-gradient(to right,#6c63ff,#00c9a7);
+            color:white;
+        }
+
+        .hero-content h2{
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
+
+        .hero-content button{
+            padding:15px 35px;
+            border:none;
+            border-radius:30px;
+            background:white;
+            color:#6c63ff;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .hero-content button:hover{
+            transform:scale(1.05);
+            background:#222;
+            color:white;
+        }
+
+        /* CATEGORIES */
+
+        .categories{
+            padding:60px 8%;
+        }
+
+        .section-title{
+            text-align:center;
+            font-size:35px;
+            margin-bottom:40px;
+            color:#222;
+        }
+
+        .category-box{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            margin-bottom:10px;
+            color:#6c63ff;
+        }
+
+        /* FEATURED PRODUCTS */
+
+        .products{
+            padding:60px 8%;
+            background:white;
+        }
+
+        .product-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .product-card{
+            background:#f5f7fa;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 10px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .product-card:hover{
+            transform:scale(1.03);
+        }
+
+        .product-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .product-info{
+            padding:20px;
+        }
+
+        .product-info h3{
+            margin-bottom:10px;
+        }
+
+        .price{
+            color:#00c9a7;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        .buy-btn{
+            margin-top:15px;
+            display:inline-block;
+            padding:10px 20px;
+            background:#6c63ff;
+            color:white;
+            text-decoration:none;
+            border-radius:25px;
+            transition:0.3s;
+        }
+
+        .buy-btn:hover{
+            background:#00c9a7;
+        }
+
+        /* REPAIR SERVICES */
+
+        .services{
+            padding:60px 8%;
+        }
+
+        .service-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+        }
+
+        /* TESTIMONIALS */
+
+        .testimonials{
+            background:#6c63ff;
+            color:white;
+            padding:60px 8%;
+            text-align:center;
+        }
+
+        .testimonial-box{
+            margin-top:30px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .testimonial{
+            background:rgba(255,255,255,0.1);
+            padding:25px;
+            border-radius:15px;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            nav ul{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .hero-content h2{
+                font-size:38px;
+            }
+
+            .hero-content p{
+                font-size:18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <h1>UniTech Hub</h1>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="repair.html">Repair</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Buy, Sell & Repair Electronics</h2>
+
+            <p>
+                Explore amazing gadgets and professional repair services
+                in one modern platform.
+            </p>
+
+            <button>Explore Now</button>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+        <h2 class="section-title">Categories</h2>
+
+        <div class="category-box">
+
+            <div class="card">
+                <h3>Mobiles</h3>
+                <p>Latest smartphones at best prices.</p>
+            </div>
+
+            <div class="card">
+                <h3>Laptops</h3>
+                <p>Gaming and professional laptops.</p>
+            </div>
+
+            <div class="card">
+                <h3>Accessories</h3>
+                <p>Chargers, headphones & more.</p>
+            </div>
+
+            <div class="card">
+                <h3>Repair Services</h3>
+                <p>Fast and trusted repair solutions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+
+    <section class="products">
+
+        <h2 class="section-title">Featured Products</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="mobile">
+
+                <div class="product-info">
+
+                    <h3>iPhone 15</h3>
+
+                    <p class="price">₹79,999</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500" alt="laptop">
+
+                <div class="product-info">
+
+                    <h3>Gaming Laptop</h3>
+
+                    <p class="price">₹65,000</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="headphones">
+
+                <div class="product-info">
+
+                    <h3>Wireless Headphones</h3>
+
+                    <p class="price">₹2,999</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- REPAIR SERVICES -->
+
+    <section class="services">
+
+        <h2 class="section-title">Repair Services</h2>
+
+        <div class="service-container">
+
+            <div class="card">
+                <h3>Mobile Repair</h3>
+                <p>Quick mobile fixing service.</p>
+            </div>
+
+            <div class="card">
+                <h3>Laptop Repair</h3>
+                <p>Hardware & software support.</p>
+            </div>
+
+            <div class="card">
+                <h3>Screen Replacement</h3>
+                <p>Affordable display replacement.</p>
+            </div>
+
+            <div class="card">
+                <h3>Battery Replacement</h3>
+                <p>Original battery installation.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials">
+
+        <h2 class="section-title">What Our Customers Say</h2>
+
+        <div class="testimonial-box">
+
+            <div class="testimonial">
+                <p>
+                    "Amazing products and very fast repair service."
+                </p>
+                <h4>- Rahul</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    "The website design looks modern and smooth."
+                </p>
+                <h4>- Priya</h4>
+            </div>
+
+            <div class="testimonial">
+                <p>
+                    "Best place to buy and repair electronics."
+                </p>
+                <h4>- Arjun</h4>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>© 2026 UniTech Hub | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

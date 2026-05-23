@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marketplace - UniTech Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: #6c63ff;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00c9a7;
+        }
+
+        /* PAGE TITLE */
+
+        .title {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .title h2 {
+            font-size: 40px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* SEARCH BAR */
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box input {
+            width: 320px;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            background: #6c63ff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #00c9a7;
+        }
+
+        /* FILTER BUTTONS */
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .filters button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .filters button:hover {
+            background: #6c63ff;
+            color: white;
+        }
+
+        /* PRODUCTS */
+
+        .marketplace {
+            padding: 50px 8%;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .price {
+            color: #00c9a7;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .seller {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #6c63ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #00c9a7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .title h2 {
+                font-size: 30px;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <h1>UniTech Hub</h1>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="repair.html">Repair</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- TITLE -->
+
+    <section class="title">
+        <h2>Marketplace</h2>
+        <p>Buy & Sell Electronics Easily</p>
+    </section>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+    </div>
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+        <button>All</button>
+        <button>Mobiles</button>
+        <button>Laptops</button>
+        <button>Accessories</button>
+        <button>Tablets</button>
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <section class="marketplace">
+
+        <div class="product-container">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                    alt="iPhone">
+
+                <div class="product-info">
+
+                    <h3>iPhone 15 Pro</h3>
+
+                    <p class="price">₹89,999</p>
+
+                    <p class="seller">Seller : Rahul</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+                    alt="Laptop">
+
+                <div class="product-info">
+
+                    <h3>Gaming Laptop</h3>
+
+                    <p class="price">₹65,000</p>
+
+                    <p class="seller">Seller : Priya</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+                    alt="Headphones">
+
+                <div class="product-info">
+
+                    <h3>Wireless Headphones</h3>
+
+                    <p class="price">₹2,999</p>
+
+                    <p class="seller">Seller : Arjun</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500"
+                    alt="Watch">
+
+                <div class="product-info">
+
+                    <h3>Smart Watch</h3>
+
+                    <p class="price">₹4,999</p>
+
+                    <p class="seller">Seller : Kiran</p>
+
+                    <a href="#" class="buy-btn">Buy Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>© 2026 UniTech Hub | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>

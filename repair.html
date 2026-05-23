@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repair Services - UniTech Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f7fa;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav{
+            background:#6c63ff;
+            padding:15px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        nav h1{
+            color:white;
+            font-size:30px;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#00c9a7;
+        }
+
+        /* ================= HERO SECTION ================= */
+
+        .hero{
+            background:linear-gradient(to right,#6c63ff,#00c9a7);
+            color:white;
+            text-align:center;
+            padding:100px 20px;
+        }
+
+        .hero h2{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:20px;
+            max-width:700px;
+            margin:auto;
+            line-height:1.6;
+        }
+
+        .hero button{
+            margin-top:30px;
+            padding:15px 35px;
+            border:none;
+            border-radius:30px;
+            background:white;
+            color:#6c63ff;
+            font-size:17px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .hero button:hover{
+            background:#222;
+            color:white;
+        }
+
+        /* ================= SECTION TITLE ================= */
+
+        .section-title{
+            text-align:center;
+            font-size:38px;
+            color:#222;
+            margin-bottom:40px;
+        }
+
+        /* ================= SERVICES SECTION ================= */
+
+        .services{
+            padding:70px 8%;
+        }
+
+        .service-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .service-card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .service-card:hover{
+            transform:translateY(-10px);
+        }
+
+        .service-card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .service-info{
+            padding:25px;
+            text-align:center;
+        }
+
+        .service-info h3{
+            color:#6c63ff;
+            margin-bottom:15px;
+            font-size:24px;
+        }
+
+        .service-info p{
+            color:#666;
+            margin-bottom:20px;
+            line-height:1.5;
+        }
+
+        .book-btn{
+            display:inline-block;
+            padding:12px 25px;
+            background:#6c63ff;
+            color:white;
+            text-decoration:none;
+            border-radius:30px;
+            transition:0.3s;
+        }
+
+        .book-btn:hover{
+            background:#00c9a7;
+        }
+
+        /* ================= REPAIR PROCESS ================= */
+
+        .process{
+            background:white;
+            padding:70px 8%;
+        }
+
+        .process-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+        }
+
+        .process-card{
+            background:#f5f7fa;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .process-card:hover{
+            transform:scale(1.05);
+        }
+
+        .process-card h3{
+            color:#6c63ff;
+            margin-bottom:15px;
+        }
+
+        .process-card p{
+            color:#555;
+        }
+
+        /* ================= WHY CHOOSE US ================= */
+
+        .why{
+            padding:70px 8%;
+        }
+
+        .why-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+        }
+
+        .why-card{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .why-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .why-card h3{
+            color:#6c63ff;
+            margin-bottom:15px;
+        }
+
+        .why-card p{
+            color:#555;
+        }
+
+        /* ================= TESTIMONIALS ================= */
+
+        .testimonials{
+            background:#6c63ff;
+            color:white;
+            padding:70px 8%;
+            text-align:center;
+        }
+
+        .testimonial-container{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:40px;
+        }
+
+        .testimonial-card{
+            background:rgba(255,255,255,0.1);
+            padding:25px;
+            border-radius:15px;
+        }
+
+        .testimonial-card p{
+            margin-bottom:15px;
+            line-height:1.6;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            nav ul{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .hero h2{
+                font-size:35px;
+            }
+
+            .hero p{
+                font-size:17px;
+            }
+
+            .section-title{
+                font-size:30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <h1>UniTech Hub</h1>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketplace.html">Marketplace</a></li>
+            <li><a href="repair.html">Repair</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <h2>Professional Electronics Repair</h2>
+
+        <p>
+            Fast, affordable and trusted repair services for mobiles,
+            laptops, tablets and accessories.
+        </p>
+
+        <button>Book Repair</button>
+
+    </section>
+
+    <!-- ================= SERVICES SECTION ================= -->
+
+    <section class="services">
+
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="service-container">
+
+            <!-- CARD 1 -->
+
+            <div class="service-card">
+
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+                    alt="Mobile Repair">
+
+                <div class="service-info">
+
+                    <h3>Mobile Repair</h3>
+
+                    <p>
+                        Complete repair solutions for all smartphone brands.
+                    </p>
+
+                    <a href="#" class="book-btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="service-card">
+
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+                    alt="Laptop Repair">
+
+                <div class="service-info">
+
+                    <h3>Laptop Repair</h3>
+
+                    <p>
+                        Hardware and software troubleshooting services.
+                    </p>
+
+                    <a href="#" class="book-btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="service-card">
+
+                <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500"
+                    alt="Screen Replacement">
+
+                <div class="service-info">
+
+                    <h3>Screen Replacement</h3>
+
+                    <p>
+                        Cracked screen replacement at affordable prices.
+                    </p>
+
+                    <a href="#" class="book-btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="service-card">
+
+                <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500"
+                    alt="Battery Replacement">
+
+                <div class="service-info">
+
+                    <h3>Battery Replacement</h3>
+
+                    <p>
+                        Genuine battery replacement with warranty support.
+                    </p>
+
+                    <a href="#" class="book-btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= REPAIR PROCESS ================= -->
+
+    <section class="process">
+
+        <h2 class="section-title">How It Works</h2>
+
+        <div class="process-container">
+
+            <div class="process-card">
+
+                <h3>1. Book Service</h3>
+
+                <p>
+                    Choose your repair service and submit your request.
+                </p>
+
+            </div>
+
+            <div class="process-card">
+
+                <h3>2. Device Inspection</h3>
+
+                <p>
+                    Our technicians inspect and diagnose your device.
+                </p>
+
+            </div>
+
+            <div class="process-card">
+
+                <h3>3. Repair Process</h3>
+
+                <p>
+                    We repair your device using quality spare parts.
+                </p>
+
+            </div>
+
+            <div class="process-card">
+
+                <h3>4. Delivery</h3>
+
+                <p>
+                    Get your repaired device safely and quickly.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="why">
+
+        <h2 class="section-title">Why Choose Us</h2>
+
+        <div class="why-container">
+
+            <div class="why-card">
+
+                <h3>Expert Technicians</h3>
+
+                <p>
+                    Skilled professionals with years of repair experience.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>Affordable Pricing</h3>
+
+                <p>
+                    Budget-friendly services with high-quality support.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>Quick Repairs</h3>
+
+                <p>
+                    Same-day repair available for selected devices.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>Trusted Support</h3>
+
+                <p>
+                    Friendly customer support available 24/7.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+
+    <section class="testimonials">
+
+        <h2 class="section-title">Customer Reviews</h2>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial-card">
+
+                <p>
+                    "Excellent mobile repair service and quick delivery."
+                </p>
+
+                <h4>- Rahul</h4>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <p>
+                    "Affordable pricing and professional technicians."
+                </p>
+
+                <h4>- Priya</h4>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <p>
+                    "My laptop works perfectly after repair. Highly recommended!"
+                </p>
+
+                <h4>- Arjun</h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>© 2026 UniTech Hub | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
