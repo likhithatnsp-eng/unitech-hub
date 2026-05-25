@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login - UniTech Hub</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Login Page</title>
 
     <style>
 
@@ -19,193 +19,50 @@
         }
 
         body{
-            background:linear-gradient(to right,#6c63ff,#00c9a7);
-            min-height:100vh;
-        }
-
-        /* ================= NAVBAR ================= */
-
-        nav{
-            padding:15px 8%;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            background:rgba(255,255,255,0.1);
-            backdrop-filter:blur(10px);
-        }
-
-        nav h1{
-            color:white;
-            font-size:30px;
-        }
-
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:20px;
-        }
-
-        nav ul li a{
-            text-decoration:none;
-            color:white;
-            font-weight:bold;
-            transition:0.3s;
-        }
-
-        nav ul li a:hover{
-            color:#222;
-        }
-
-        /* ================= LOGIN SECTION ================= */
-
-        .login-section{
+            height:100vh;
             display:flex;
             justify-content:center;
             align-items:center;
-            min-height:85vh;
-            padding:20px;
+            background:linear-gradient(to right,#6c63ff,#00c9a7);
         }
 
-        .login-container{
-            width:100%;
-            max-width:420px;
+        .login-box{
+            width:320px;
             background:white;
             padding:40px;
-            border-radius:20px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .login-container h2{
+        .login-box h2{
             text-align:center;
+            margin-bottom:25px;
             color:#6c63ff;
-            margin-bottom:10px;
-            font-size:35px;
         }
 
-        .login-container p{
-            text-align:center;
-            color:#666;
-            margin-bottom:30px;
-        }
-
-        /* FORM */
-
-        .login-form input{
+        .login-box input{
             width:100%;
-            padding:14px;
+            padding:12px;
             margin-bottom:20px;
             border:none;
-            outline:none;
             background:#f5f7fa;
             border-radius:10px;
-            font-size:16px;
+            outline:none;
         }
 
-        .login-form button{
+        .login-box button{
             width:100%;
-            padding:14px;
-            border:none;
-            border-radius:30px;
-            background:#6c63ff;
-            color:white;
-            font-size:17px;
-            font-weight:bold;
-            cursor:pointer;
-            transition:0.3s;
-        }
-
-        .login-form button:hover{
-            background:#00c9a7;
-        }
-
-        /* EXTRA LINKS */
-
-        .extra-links{
-            margin-top:20px;
-            text-align:center;
-        }
-
-        .extra-links a{
-            text-decoration:none;
-            color:#6c63ff;
-            font-weight:bold;
-        }
-
-        .extra-links a:hover{
-            color:#00c9a7;
-        }
-
-        /* SOCIAL LOGIN */
-
-        .social-login{
-            margin-top:25px;
-            text-align:center;
-        }
-
-        .social-login p{
-            margin-bottom:15px;
-            color:#555;
-        }
-
-        .social-buttons{
-            display:flex;
-            justify-content:center;
-            gap:15px;
-        }
-
-        .social-buttons button{
-            padding:10px 20px;
+            padding:12px;
             border:none;
             border-radius:25px;
+            background:#6c63ff;
+            color:white;
+            font-size:16px;
             cursor:pointer;
-            font-weight:bold;
-            transition:0.3s;
         }
 
-        .google{
-            background:#db4437;
-            color:white;
-        }
-
-        .facebook{
-            background:#1877f2;
-            color:white;
-        }
-
-        .social-buttons button:hover{
-            transform:scale(1.05);
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer{
-            text-align:center;
-            color:white;
-            padding:20px;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media(max-width:768px){
-
-            nav{
-                flex-direction:column;
-                gap:15px;
-            }
-
-            nav ul{
-                flex-direction:column;
-                text-align:center;
-            }
-
-            .login-container{
-                padding:30px;
-            }
-
-            .login-container h2{
-                font-size:28px;
-            }
-
+        .login-box button:hover{
+            background:#00c9a7;
         }
 
     </style>
@@ -214,90 +71,28 @@
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <div class="login-box">
 
-    <nav>
+        <h2>Login</h2>
 
-        <h1>UniTech Hub</h1>
+        <form action="index.html">
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="marketplace.html">Marketplace</a></li>
-            <li><a href="repair.html">Repair</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
+            <input 
+            type="email" 
+            placeholder="Enter Email"
+            required>
 
-    </nav>
+            <input 
+            type="password" 
+            placeholder="Enter Password"
+            required>
 
-    <!-- ================= LOGIN SECTION ================= -->
+            <button type="submit">
+                Login
+            </button>
 
-    <section class="login-section">
+        </form>
 
-        <div class="login-container">
-
-            <h2>Welcome Back</h2>
-
-            <p>Login to continue to UniTech Hub</p>
-
-            <!-- LOGIN FORM -->
-
-            <form class="login-form">
-
-                <input type="email" placeholder="Enter Your Email" required>
-
-                <input type="password" placeholder="Enter Your Password" required>
-
-                <button type="submit">Login</button>
-
-            </form>
-
-            <!-- EXTRA LINKS -->
-
-            <div class="extra-links">
-
-                <p>
-                    Forgot Password?
-                    <a href="#">Reset Here</a>
-                </p>
-
-                <br>
-
-                <p>
-                    Don't have an account?
-                    <a href="#">Register</a>
-                </p>
-
-            </div>
-
-            <!-- SOCIAL LOGIN -->
-
-            <div class="social-login">
-
-                <p>Or Login With</p>
-
-                <div class="social-buttons">
-
-                    <button class="google">Google</button>
-
-                    <button class="facebook">Facebook</button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>© 2026 UniTech Hub | All Rights Reserved</p>
-
-    </footer>
+    </div>
 
 </body>
-
-</html>
